@@ -1,0 +1,26 @@
+# --- System / Mac ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Python / Backend ---
+venv/
+__pycache__/
+*.py[cod]
+.env
+fitness_server/key.json
+
+# --- Flutter / Dart ---
+# The big heavy folders:
+**/build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# --- IDE Settings (Optional but recommended) ---
+.idea/
+.vscode/
+*.swp
