@@ -1,8 +1,15 @@
 import os
+print("DEBUG: os imported")
 from flask import Flask, request, jsonify, send_from_directory
+print("DEBUG: Flask imported")
+print("DEBUG: Attempting to import PoseAnalyzer...")
 from poseAnalyzer import PoseAnalyzer
+print("DEBUG: PoseAnalyzer imported")
 from flask_cors import CORS
+print("DEBUG: CORS imported")
+print("DEBUG: Attempting to import fitnessDB...")
 from fitnessDB import weightLifting_videos, basketball_videos
+print("DEBUG: fitnessDB imported")
 
 app = Flask(__name__)
 CORS(app)

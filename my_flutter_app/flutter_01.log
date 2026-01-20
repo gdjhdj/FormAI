@@ -1,0 +1,167 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter pub get
+
+## exception
+
+FileSystemException: FileSystemException: writeFrom failed, path = '/Users/edwardli/Desktop/FormAI/my_flutter_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java' (OS Error: Operation timed out, errno = 60)
+
+```
+#0      _checkForErrorResponse (dart:io/common.dart:58:9)
+#1      _RandomAccessFile.writeFrom.<anonymous closure> (dart:io/file_impl.dart:1000:7)
+#2      _rootRunUnary (dart:async/zone.dart:1538:47)
+#3      _CustomZone.runUnary (dart:async/zone.dart:1429:19)
+<asynchronous suspension>
+#4      _File.writeAsBytes.<anonymous closure>.<anonymous closure> (dart:io/file_impl.dart:734:23)
+<asynchronous suspension>
+#5      _RandomAccessFile.close (dart:io/file_impl.dart:855:3)
+<asynchronous suspension>
+#6      ForwardingFile.writeAsString (package:file/src/forwarding/forwarding_file.dart:136:12)
+<asynchronous suspension>
+#7      ErrorHandlingFile.writeAsString.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:238:9)
+<asynchronous suspension>
+#8      _run (package:flutter_tools/src/base/error_handling_io.dart:512:12)
+<asynchronous suspension>
+#9      _renderTemplateToFile (package:flutter_tools/src/flutter_plugins.dart:41:3)
+<asynchronous suspension>
+#10     _writeAndroidPluginRegistrant (package:flutter_tools/src/flutter_plugins.dart:404:3)
+<asynchronous suspension>
+#11     injectPlugins (package:flutter_tools/src/flutter_plugins.dart:1235:5)
+<asynchronous suspension>
+#12     FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:387:5)
+<asynchronous suspension>
+#13     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:388:7)
+<asynchronous suspension>
+#14     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1558:27)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#16     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#17     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#19     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#20     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:98:11)
+<asynchronous suspension>
+#21     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#22     main (package:flutter_tools/executable.dart:99:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[31m[☠][39m Flutter (the doctor check crashed)
+    [31m✗[39m Due to an error, the doctor check did not complete. If the error message
+      below is not helpful, please let us know about this issue at
+      https://github.com/flutter/flutter/issues.
+    [31m✗[39m FormatException: Unexpected end of input (at character 1)
+
+      ^
+
+    [32m•[39m #0      _ChunkedJsonParser.fail
+      (dart:convert-patch/convert_patch.dart:1463:5)
+      #1      _ChunkedJsonParser.close
+      (dart:convert-patch/convert_patch.dart:497:7)
+      #2      _parseJson (dart:convert-patch/convert_patch.dart:36:10)
+      #3      JsonDecoder.convert (dart:convert/json.dart:641:36)
+      #4      JsonCodec.decode (dart:convert/json.dart:223:41)
+      #5      jsonDecode (dart:convert/json.dart:160:12)
+      #6      Cache.devToolsVersion
+      (package:flutter_tools/src/cache.dart:436:28)
+      #7      _DefaultDoctorValidatorsProvider.validators.<anonymous closure>
+      (package:flutter_tools/src/doctor.dart:138:46)
+      #8      FlutterValidator.validateImpl
+      (package:flutter_tools/src/doctor.dart:594:84)
+      #9      DoctorValidator.validate
+      (package:flutter_tools/src/doctor_validator.dart:58:43)
+      #10     Doctor.startValidatorTasks.<anonymous closure>
+      (package:flutter_tools/src/doctor.dart:244:72)
+      #11     asyncGuard.<anonymous closure>
+      (package:flutter_tools/src/base/async_guard.dart:109:34)
+      #12     _rootRun (dart:async/zone.dart:1525:13)
+      #13     _CustomZone.run (dart:async/zone.dart:1422:19)
+      #14     _runZoned (dart:async/zone.dart:2034:6)
+      #15     runZonedGuarded (dart:async/zone.dart:2020:12)
+      #16     runZoned (dart:async/zone.dart:1952:12)
+      #17     asyncGuard (package:flutter_tools/src/base/async_guard.dart:106:3)
+      #18     Doctor.startValidatorTasks
+      (package:flutter_tools/src/doctor.dart:234:9)
+      #19     DoctorText._validatorTasks
+      (package:flutter_tools/src/doctor.dart:827:60)
+      #20     DoctorText._validatorTasks (package:flutter_tools/src/doctor.dart)
+      #21     DoctorText._runDiagnosis
+      (package:flutter_tools/src/doctor.dart:832:32)
+      #22     DoctorText.text (package:flutter_tools/src/doctor.dart:823:36)
+      #23     DoctorText.text (package:flutter_tools/src/doctor.dart)
+      #24     _createLocalCrashReport (package:flutter_tools/runner.dart:274:51)
+      #25     _handleToolError (package:flutter_tools/runner.dart:235:31)
+      <asynchronous suspension>
+      #26     AppContext.run.<anonymous closure>
+      (package:flutter_tools/src/base/context.dart:154:19)
+      <asynchronous suspension>
+      #27     main (package:flutter_tools/executable.dart:99:3)
+      <asynchronous suspension>
+
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 35.0.1)
+    [2.6s]
+    [32m•[39m Android SDK at /Users/edwardli/Library/Android/sdk
+    [32m•[39m Platform android-35, build-tools 35.0.1
+    [32m•[39m ANDROID_HOME = /Users/edwardli/Library/Android/sdk
+    [32m•[39m Java binary at: /Applications/Android
+      Studio.app/Contents/jbr/Contents/Home/bin/java
+      This is the JDK bundled with the latest Android Studio installation on
+      this machine.
+      To manually set the JDK path, use: `flutter config
+      --jdk-dir="path/to/jdk"`.
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.4+-12422083-b607.1)
+    [33m![39m Some Android licenses not accepted. To resolve this, run: flutter doctor
+      --android-licenses
+
+[32m[✓][39m Xcode - develop for iOS and macOS (Xcode 16.2) [3.2s]
+    [32m•[39m Xcode at /Applications/Xcode.app/Contents/Developer
+    [32m•[39m Build 16C5032a
+    [32m•[39m CocoaPods version 1.16.2
+
+[32m[✓][39m Chrome - develop for the web [7ms]
+    [32m•[39m Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[32m[✓][39m Android Studio (version 2024.2) [7ms]
+    [32m•[39m Android Studio at /Applications/Android Studio.app/Contents
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.4+-12422083-b607.1)
+
+[32m[✓][39m VS Code (version 1.106.1) [5ms]
+    [32m•[39m VS Code at /Applications/Visual Studio Code.app/Contents
+    [32m•[39m Flutter extension version 3.124.0
+
+[32m[✓][39m VS Code (version 1.84.2) [5ms]
+    [32m•[39m VS Code at /Users/edwardli/Downloads/Bullshit Studio Code.app/Contents
+    [32m•[39m Flutter extension version 3.124.0
+
+[32m[✓][39m Connected device (4 available) [7.8s]
+    [32m•[39m sdk gphone64 arm64 (mobile)     • emulator-5554         • android-arm64  •
+      Android 15 (API 35) (emulator)
+    [32m•[39m macOS (desktop)                 • macos                 • darwin-arm64   •
+      macOS 15.6.1 24G90 darwin-arm64
+    [32m•[39m Mac Designed for iPad (desktop) • mac-designed-for-ipad • darwin         •
+      macOS 15.6.1 24G90 darwin-arm64
+    [32m•[39m Chrome (web)                    • chrome                • web-javascript •
+      Google Chrome 143.0.7499.170
+
+[32m[✓][39m Network resources [411ms]
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
